@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Common;
 using YoutubeExplode.Videos.Streams;
+using System.Net.Http;
 
 var result = new List<Track>();
 //clear tracks.json
