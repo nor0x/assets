@@ -1,0 +1,28 @@
+name: build tracks
+on:
+  # Schedule updates (every 4 hours)
+  schedule: [{cron: "0 */4 * * *"}]
+  # Lines below let you run workflow manually and on each commit (optional)
+  workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install dotnet-script
+              run: dotnet tool install -g dotnet-script
+            - name: Install .NET SDK
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 8.0.x
+            - name: Build tracks
+              run: dotnet script build-tracks.csx
+            - name: Commit and push changes
+              run: |
+                git config --global user.name "your username"
+                git config --global user.email "your email"
+
+                git add -A
+                git commit -m "commit message"
+                git push
