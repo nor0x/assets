@@ -23,7 +23,7 @@ async Task<List<Track>> GetTracks()
 	try
 	{
 		var client = new HttpClient();
-		client.DefaultRequestHeaders.Add("User-Agent", "C# console program");
+		client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (ndroid 14; obile; rv:115.0) Gecko/115.0 Firefox/115.0");
 		var youtube = new YoutubeClient(client);
 
 		var playlistUrl = "https://www.youtube.com/playlist?list=PLEelxuGt2Io5jGNnA44S9lRhclhz7po1U";
