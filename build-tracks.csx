@@ -21,7 +21,10 @@ async Task<List<Track>> GetTracks()
 {
 	try
 	{
-		var youtube = new YoutubeClient();
+		var client = new HttpClient();
+		client.DefaultRequestHeaders.Add("User-Agent", "C# console program");
+		var youtube = new YoutubeClient(client);
+
 		var playlistUrl = "https://www.youtube.com/playlist?list=PLEelxuGt2Io5jGNnA44S9lRhclhz7po1U";
 
 		// Get all playlist videos
