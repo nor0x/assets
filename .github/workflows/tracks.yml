@@ -1,7 +1,7 @@
 name: build tracks
 on:
   # Schedule updates (every 4 hours)
-  schedule: [{cron: "0 */4 * * *"}]
+  # schedule: [{cron: "0 */4 * * *"}]
   # Lines below let you run workflow manually and on each commit (optional)
   workflow_dispatch:
 
